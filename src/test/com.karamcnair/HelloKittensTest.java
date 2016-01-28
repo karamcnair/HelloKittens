@@ -1,3 +1,5 @@
+package com.karamcnair;
+
 import com.karamcnair.*;
 import org.junit.Test;
 import org.junit.Assert;
@@ -45,7 +47,7 @@ public class HelloKittensTest {
     @org.junit.Test
     public void testURLify() throws Exception {
         String input = "Ms Dana Scully    ";
-        String expected = new String("Ms%20Dana%20Scully");
+        String expected = "Ms%20Dana%20Scully";
 
         URLify u = new URLify();
         String actual = u.urlify(input);
@@ -64,4 +66,38 @@ public class HelloKittensTest {
         Assert.assertTrue(ip.isPalindromePermutation(isPalindromePerm));
         Assert.assertFalse(ip.isPalindromePermutation(notPalindromePerm));
     }
+
+    @org.junit.Test
+    public void testOneAway() throws Exception
+    {
+
+        String s1 = "pale";
+        String s2 = "ple";
+        String s3 = "pales";
+        String s4 = "bale";
+        String s5 = "bake";
+
+        OneAway oa = new OneAway();
+        Assert.assertTrue(oa.oneAway(s1, s2));
+        Assert.assertTrue(oa.oneAway(s1, s3));
+        Assert.assertTrue(oa.oneAway(s1, s4));
+        Assert.assertFalse(oa.oneAway(s1, s5));
+
+    }
+
+    @org.junit.Test
+    public void testStringCompression() throws Exception
+    {
+        String s1 = "aabcccccaaa";
+        String s1Result = "a2b1c5a3";
+        String s2 = "abcdefg";
+        String s2Result = "abcdefg";
+
+        StringCompression sc = new StringCompression();
+        Assert.assertEquals(sc.compressString(s1), s1Result);
+        Assert.assertEquals(sc.compressString(s2), s2Result);
+
+    }
+
+
 }

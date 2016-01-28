@@ -42,7 +42,7 @@ public class IsPalindromePermutation {
                                     return (entry % 2 == 1);
                                 })
                                 .collect(Collectors.toList());
-        System.out.println("This is" + (isOdd ? "" : "NOT") + "odd!");
+        System.out.println("This is " + (isOdd ? "" : "NOT ") + "odd!");
         System.out.println(oddballs);
 
         return ((oddballs.size() == 0) || (oddballs.size() == 1 && isOdd));
