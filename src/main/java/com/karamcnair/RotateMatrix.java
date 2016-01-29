@@ -5,11 +5,6 @@ package com.karamcnair;
  */
 class RotateMatrix
 {
-    private class Pixel {
-        private Byte[] pixel = null;
+    //
 
-        Pixel(Byte[] bytes) {
-            pixel = bytes;
-        }
-    }
 }

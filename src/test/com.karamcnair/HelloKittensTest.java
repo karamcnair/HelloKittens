@@ -9,16 +9,6 @@ import org.junit.Assert;
  */
 @SuppressWarnings("ALL")
 public class HelloKittensTest {
-    @Test
-    public void testMerge() throws Exception {
-        HelloKittens kit = new HelloKittens();
-        String[] stringArr1 = {"this", "is", "a", "static"};
-        String[] stringArr2 = {"array", "this", "is"};
-
-        String[] expected = {"this", "is", "a", "static", "array", "this", "is"};
-        String[] actual = kit.merge(stringArr1, stringArr2);
-        Assert.assertArrayEquals(expected, actual);
-    }
 
     @Test
     public void testIsPermutation() throws Exception {
@@ -51,7 +41,6 @@ public class HelloKittensTest {
         URLify u = new URLify();
         String actual = u.urlify(input);
         Assert.assertEquals(expected, actual);
-//        Assert.assertTrue(output.equals(u.urlify(input)));
 
     }
 
@@ -102,7 +91,12 @@ public class HelloKittensTest {
     @Test
     public void testRotateMatrix() throws Exception
     {
+        String str = "xyz";
+        char arr[] = str.toCharArray(); // convert the String object to array of char
 
-
+        // iterate over the array using the for-each loop.
+        for(char c: arr){
+            System.out.println(c);
+        }
     }
 }

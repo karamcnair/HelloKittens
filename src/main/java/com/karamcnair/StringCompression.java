@@ -1,5 +1,8 @@
 package com.karamcnair;
 
+import java.util.StringJoiner;
+import java.util.stream.Collector;
+
 /**
  * Created by mcnair on 1/27/16.
  */
@@ -19,10 +22,33 @@ class StringCompression
         // more than I planned. HOWEVER, let's see if we can extend it to use lambda function.
         // Definitely could in some languages, but we'll see with Java.
 
+        // ok, so I'm going to be using either reduce or collect.
+
+        // I'll be passing the string in (or an array of chars? let's try that for simplicity, since
+        // a String probably isn't a true 'collection')
+
+        // if 'next' is null, OR 'this' and 'next' differ,
+        // the interim accumulator get accumulated onto the global accumulator.
+        // If not, ('this' and 'next' are the same), the interim accumulator goes up.
+
+
+//        theString.chars().range(1,4).forEach(System.out::println);
+
+//
+//
+//        java.util.stream.Collector<Integer, java.util.StringJoiner, String > charCollector =
+//                Collector.of(
+//                        () -> new StringJoiner(" "),
+//                        (j, p) -> j.add(p)),
+//                        j1, j2) -> j1.merge(j2), StringJoiner::toString);
+//
+//        String newString = theString.chars().collect(charCollector);
+
+
+
         if (compressedLen > theString.length()) {
             return theString;
         }
-
 
         StringBuilder sb = new StringBuilder(compressedLen);
         int countConsecutive = 0;
@@ -55,4 +81,6 @@ class StringCompression
         }
         return len;
     }
+
+
 }
