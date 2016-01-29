@@ -7,36 +7,52 @@ package com.karamcnair;
 class StringCompression
 {
     public String compressString(String theString) {
-        // naive solution is to walk through the string & each time there's a dup, count up
-        // when the char changes, write to StringBuilder.
+        // Now going to implement the suggested improvement that saves space. I've
+        // read the idea but will be implementing on my own.
 
-        char curChar = ' ';
-        int curCharCount = 0;
-        StringBuilder sb = new StringBuilder();
+        // high level: first run through the string to figure out what the length of
+        // the compressed string will be and then only do that if it's going to be shorter than
+        // the original string. Helper function to do the first.
+        int compressedLen = countCompressedString(theString);
 
-        for (int i = 0; i < theString.length(); i++) {
-            char c = theString.charAt(i);
+        // OK, I found the lookahead different enough from my original that I ended up looking
+        // more than I planned. HOWEVER, let's see if we can extend it to use lambda function.
+        // Definitely could in some languages, but we'll see with Java.
 
-            if (c == curChar) {
-                curCharCount++;
-            }
-            else {
-                // if this isn't the very first time through the loop
-                if (curCharCount > 0 ) {
-                    sb.append(curChar).append(curCharCount);
-                }
-                curChar = c;
-                curCharCount = 1;
-            }
-        }
-        /// flush the last one
-        sb.append(curChar).append(curCharCount);
-
-
-        if (sb.length() >= theString.length()) {
+        if (compressedLen > theString.length()) {
             return theString;
-        } else {
-            return sb.toString();
         }
+
+
+        StringBuilder sb = new StringBuilder(compressedLen);
+        int countConsecutive = 0;
+
+        for (int i = 0; i < theString.length(); i ++ ) {
+            // first one
+            countConsecutive++;
+            // if the current character doesn't match the next one, we need to add to the length
+            if ((i + 1 == theString.length() || (theString.charAt(i)) != theString.charAt(i+1))) {
+                sb.append(theString.charAt(i)).append(countConsecutive);
+                countConsecutive = 0;
+            }
+        }
+        return sb.toString();
+    }
+
+    public int countCompressedString(String theString) {
+        int len = 0;
+        int countConsecutive = 0;
+
+        // because we're doing lookahead, we have to stop one loop index early
+        for (int i = 0; i < theString.length(); i ++ ) {
+            // first one
+            countConsecutive++;
+            // if the current character doesn't match the next one, we need to add to the length
+            if ((i + 1 == theString.length()) || (theString.charAt(i) != theString.charAt(i+1))) {
+                len += 1 + String.valueOf(countConsecutive).length();
+                countConsecutive = 0;
+            }
+        }
+        return len;
     }
 }
