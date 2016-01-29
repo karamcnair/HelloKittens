@@ -3,7 +3,8 @@ package com.karamcnair;
 /**
  * Created by mcnair on 1/27/16.
  */
-public class StringCompression
+@SuppressWarnings("DefaultFileTemplate")
+class StringCompression
 {
     public String compressString(String theString) {
         // naive solution is to walk through the string & each time there's a dup, count up

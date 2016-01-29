@@ -8,7 +8,8 @@ import java.util.List;
 /**
  * Created by mcnair on 2016-01-27.
  */
-public class IsPalindromePermutation {
+@SuppressWarnings("DefaultFileTemplate")
+class IsPalindromePermutation {
 
     public boolean isPalindromePermutation(String testString) {
 
@@ -38,9 +39,7 @@ public class IsPalindromePermutation {
 
         List<Integer> oddballs = charCount.values()
                                 .stream()
-                                .filter(entry -> {
-                                    return (entry % 2 == 1);
-                                })
+                                .filter(entry -> (entry % 2 == 1))
                                 .collect(Collectors.toList());
         System.out.println("This is " + (isOdd ? "" : "NOT ") + "odd!");
         System.out.println(oddballs);

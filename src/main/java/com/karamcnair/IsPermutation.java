@@ -1,12 +1,10 @@
 package com.karamcnair;
 
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by mcnair on 2016-01-27.
  */
-public class IsPermutation {
+class IsPermutation {
 
     public boolean isPermutation(String stringA, String stringB) {
 
@@ -18,7 +16,6 @@ public class IsPermutation {
         }
 
         // one way is to sort 'em and then compare 'em
-//        stringA.chars().sorted()
         char c[] = stringA.toCharArray();
         java.util.Arrays.sort(c);
         String sortedA = new String(c);

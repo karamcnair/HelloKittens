@@ -6,7 +6,8 @@ import java.util.Arrays;
 /**
  * Created by mcnair on 2016-01-27.
  */
-public class HelloKittens {
+@SuppressWarnings("DefaultFileTemplate")
+class HelloKittens {
 
     public String[] merge(String[] words, String[] more) {
         ArrayList<String> sentence = new ArrayList<>();

@@ -3,10 +3,10 @@ package com.karamcnair;
 /**
  * Created by mcnair on 2016-01-27.
  */
-public class URLify {
+class URLify {
 
     public String urlify(String unencodedString) {
-        String encodedString = "";
+        // String encodedString = "";
 
         // naive solution - not as requested but testing the test case.
         // unencodedString = unencodedString.trim();
@@ -46,7 +46,6 @@ public class URLify {
             currentIndex--;
             System.out.println(chars);
         }
-        String returnVal = new String(chars);
-        return returnVal;
+        return new String(chars);
     }
 }

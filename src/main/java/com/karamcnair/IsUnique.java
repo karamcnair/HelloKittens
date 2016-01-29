@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Created by mcnair on 2016-01-27.
  */
-public class IsUnique {
+class IsUnique {
 
     public boolean isUnique(String testString) {
         Set<Character> charSet = new HashSet<>();

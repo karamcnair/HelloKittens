@@ -4,13 +4,12 @@ import com.karamcnair.*;
 import org.junit.Test;
 import org.junit.Assert;
 
-import sun.jvm.hotspot.HelloWorld;
-
 /**
  * Created by mcnair on 2016-01-27.
  */
+@SuppressWarnings("ALL")
 public class HelloKittensTest {
-    @org.junit.Test
+    @Test
     public void testMerge() throws Exception {
         HelloKittens kit = new HelloKittens();
         String[] stringArr1 = {"this", "is", "a", "static"};
@@ -21,7 +20,7 @@ public class HelloKittensTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @Test
     public void testIsPermutation() throws Exception {
         String str1 = "astral";
         String str1perm = "larsta";
@@ -33,7 +32,7 @@ public class HelloKittensTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void testIsUnique() throws Exception {
         String notUnique = "laaaaaa";
         String unique = "absciehlwj";
@@ -44,7 +43,7 @@ public class HelloKittensTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void testURLify() throws Exception {
         String input = "Ms Dana Scully    ";
         String expected = "Ms%20Dana%20Scully";
@@ -56,7 +55,7 @@ public class HelloKittensTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void testIsPalindromePermutation() throws Exception {
         String isPalindromePerm = "Tact Coa";
         String notPalindromePerm = "abstract";
@@ -67,7 +66,7 @@ public class HelloKittensTest {
         Assert.assertFalse(ip.isPalindromePermutation(notPalindromePerm));
     }
 
-    @org.junit.Test
+    @Test
     public void testOneAway() throws Exception
     {
 
@@ -85,7 +84,7 @@ public class HelloKittensTest {
 
     }
 
-    @org.junit.Test
+    @Test
     public void testStringCompression() throws Exception
     {
         String s1 = "aabcccccaaa";
@@ -100,4 +99,10 @@ public class HelloKittensTest {
     }
 
 
+    @Test
+    public void testRotateMatrix() throws Exception
+    {
+
+
+    }
 }
